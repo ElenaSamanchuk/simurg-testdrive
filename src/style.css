@@ -224,9 +224,10 @@ html {
 
 .promo__title {
   margin: 0 0 28px;
-  font-size: 52px;
+  max-width: 560px;
+  font-size: 46px;
   font-weight: 700;
-  line-height: 1.08;
+  line-height: 1.12;
   letter-spacing: -0.01em;
   color: var(--color-cream);
 }
