@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simurg — тестовое (2 блока)</title>
+    <link rel="preload" as="image" href="/assets/hero.webp" type="image/webp" fetchpriority="high" />
+    <link rel="prefetch" as="image" href="/assets/story.webp" type="image/webp" />
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
@@ -22,23 +24,23 @@
 
         <div class="promo__inner">
           <header class="promo__brand">
-            <img class="promo__logo" src="/assets/logo-mark.svg" alt="" width="48" height="64" />
+            <img class="promo__logo anim-in anim-in--1" src="/assets/logo-mark.svg" alt="" width="48" height="64" />
           </header>
 
           <div class="promo__grid">
             <div class="promo__copy">
-              <p class="promo__badge">15–22 июня</p>
+              <p class="promo__badge anim-in anim-in--2">15–22 июня</p>
 
-              <h1 class="promo__title" id="promo-title">
+              <h1 class="promo__title anim-in anim-in--3" id="promo-title">
                 Бесплатный тест-драйв программы «Мудрое воспитание: путь к&nbsp;себе и&nbsp;ребенку»
               </h1>
 
-              <p class="promo__lead">
+              <p class="promo__lead anim-in anim-in--4">
                 За неделю вы получите доступ к&nbsp;двум урокам программы с&nbsp;Ванией Маркович, чату
                 с&nbsp;заданиями и&nbsp;полезными материалами и&nbsp;сможете попробовать обучение изнутри.
               </p>
 
-              <div class="promo__actions">
+              <div class="promo__actions anim-in anim-in--5">
                 <button class="promo__btn" type="button" data-cta>Подать заявку на участие</button>
                 <p class="promo__fine">
                   Количество мест ограничено · Отбор только по мотивационным письмам
@@ -46,16 +48,23 @@
               </div>
             </div>
 
-            <figure class="promo__visual">
-              <div class="promo__frame">
-                <img
-                  class="promo__img"
-                  src="/assets/hero-original.png"
-                  alt=""
-                  width="960"
-                  height="540"
-                  loading="eager"
-                />
+            <figure class="promo__visual anim-in anim-in--6">
+              <div
+                class="promo__frame promo__frame--hero"
+                style="background-image: url('/assets/hero-blur.webp')"
+              >
+                <picture>
+                  <source type="image/webp" srcset="/assets/hero.webp" />
+                  <img
+                    class="promo__img js-img-load"
+                    src="/assets/hero.webp"
+                    alt=""
+                    width="1280"
+                    height="853"
+                    decoding="async"
+                    fetchpriority="high"
+                  />
+                </picture>
               </div>
               <div class="promo__frame-ring" aria-hidden="true"></div>
             </figure>
@@ -70,8 +79,8 @@
         <div class="story__texture" aria-hidden="true"></div>
 
         <div class="story__inner">
-          <header class="story__header">
-            <svg class="story__mark" viewBox="0 0 44 46" aria-hidden="true">
+          <header class="story__header reveal">
+            <svg class="story__mark story__mark--pulse" viewBox="0 0 44 46" aria-hidden="true">
               <path
                 d="M22 4c6 8 10 14 10 20 0 8-4 14-10 18-6-4-10-10-10-18 0-6 4-12 10-20Z"
                 fill="none"
@@ -80,41 +89,50 @@
               />
               <circle cx="22" cy="22" r="3" fill="#DC5B33" />
             </svg>
-            <h2 class="story__title" id="story-title">
+            <h2 class="story__title reveal reveal--delay-1" id="story-title">
               Вы делаете всё правильно.<br />
               Но что-то всё равно идёт не&nbsp;так.
             </h2>
           </header>
 
           <div class="story__grid">
-            <figure class="story__visual">
-              <img
-                class="story__img"
-                src="/assets/story-original.png"
-                alt=""
-                width="640"
-                height="480"
-                loading="lazy"
-              />
+            <figure class="story__visual reveal reveal--delay-2">
+              <div
+                class="story__frame"
+                style="background-image: url('/assets/story-blur.webp')"
+              >
+                <picture>
+                  <source type="image/webp" srcset="/assets/story.webp" />
+                  <img
+                    class="story__img js-img-load"
+                    src="/assets/story.webp"
+                    alt=""
+                    width="1040"
+                    height="693"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
+              </div>
             </figure>
 
             <div class="story__body">
-              <p class="story__p">
+              <p class="story__p reveal reveal--delay-2">
                 Вы любите своего ребёнка, читаете книги о&nbsp;воспитании, стараетесь говорить
                 правильно, не&nbsp;кричать, слышать.
               </p>
 
-              <p class="story__p story__p--offset">
+              <p class="story__p story__p--offset reveal reveal--delay-3">
                 Но иногда — накрывает. Срываетесь или, наоборот, чувствуете, что ребёнок закрылся —
                 и&nbsp;не&nbsp;понимаете почему.
               </p>
 
-              <p class="story__p">
+              <p class="story__p reveal reveal--delay-4">
                 Или он ещё не&nbsp;родился — а&nbsp;вы уже чувствуете тревогу: как не&nbsp;навредить?
                 Как дать то, что действительно нужно?
               </p>
 
-              <blockquote class="story__quote">
+              <blockquote class="story__quote reveal reveal--delay-5">
                 Большинство книг о&nbsp;воспитании говорят о&nbsp;том, что делать. Но почти никто
                 не&nbsp;говорит о&nbsp;том, что происходит внутри ребёнка — с&nbsp;первых секунд его
                 появления в&nbsp;этом мире.
@@ -122,7 +140,7 @@
             </div>
           </div>
 
-          <p class="story__closing">Именно об&nbsp;этом — два урока тест-драйва.</p>
+          <p class="story__closing reveal reveal--delay-3">Именно об&nbsp;этом — два урока тест-драйва.</p>
         </div>
       </section>
     </main>
